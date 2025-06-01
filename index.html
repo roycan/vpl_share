@@ -767,276 +767,162 @@ output =
     <!-- FAQ Section -->
     <!-- Teacher Readiness Quiz Section -->
     <section id="readiness-quiz" class="section readiness-quiz-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>VPL Readiness Assessment</h2>
-          <p>Evaluate your readiness to implement VPL in your classroom</p>
-        </div>
-        
-        <div class="quiz-container">
-          <div class="quiz-intro">
-            <h3>Are You Ready for VPL?</h3>
-            <p>Complete this assessment to determine your readiness level and get personalized recommendations.</p>
+        <div class="container">
+          <div class="section-header">
+            <h2>VPL Readiness Assessment</h2>
+            <p>Evaluate your readiness to implement VPL in your classroom</p>
           </div>
-          
-          <form id="quiz-form">
-            <!-- Question 1 -->
-            <div class="question">
-              <h3>1. How would you rate your knowledge of Moodle administration?</h3>
-              <div class="options">
-                <label class="option">
-                  <input type="radio" name="q1" value="1" required>
-                  I've never used Moodle before
-                </label>
-                <label class="option">
-                  <input type="radio" name="q1" value="2">
-                  I've used Moodle as a teacher but haven't installed plugins
-                </label>
-                <label class="option">
-                  <input type="radio" name="q1" value="3">
-                  I can install plugins and configure basic course settings
-                </label>
-                <label class="option">
-                  <input type="radio" name="q1" value="4">
-                  I have extensive experience with Moodle administration
-                </label>
+          <div class="quiz-container">
+            <div class="quiz-intro">
+              <h3>Are You Ready for VPL?</h3>
+              <p>Complete this assessment to determine your readiness level and get personalized recommendations.</p>
+            </div>
+            <form id="quiz-form">
+              <div class="quiz-accordion">
+                <!-- Question 1 -->
+                <div class="quiz-item">
+                  <button type="button" class="quiz-question-header" aria-expanded="true">1. How would you rate your knowledge of Moodle administration?</button>
+                  <div class="quiz-question-panel" style="display:block">
+                    <div class="options">
+                      <label class="option"><input type="radio" name="q1" value="1" required>I've never used Moodle before</label>
+                      <label class="option"><input type="radio" name="q1" value="2">I've used Moodle as a teacher but haven't installed plugins</label>
+                      <label class="option"><input type="radio" name="q1" value="3">I can install plugins and configure basic course settings</label>
+                      <label class="option"><input type="radio" name="q1" value="4">I have extensive experience with Moodle administration</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Question 2 -->
+                <div class="quiz-item">
+                  <button type="button" class="quiz-question-header" aria-expanded="false">2. What is your level of familiarity with programming languages?</button>
+                  <div class="quiz-question-panel">
+                    <div class="options">
+                      <label class="option"><input type="radio" name="q2" value="1" required>I know basic concepts but haven't taught programming</label>
+                      <label class="option"><input type="radio" name="q2" value="2">I'm comfortable with one programming language</label>
+                      <label class="option"><input type="radio" name="q2" value="3">I'm proficient in multiple programming languages</label>
+                      <label class="option"><input type="radio" name="q2" value="4">I have professional/industry experience in software development</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Question 3 -->
+                <div class="quiz-item">
+                  <button type="button" class="quiz-question-header" aria-expanded="false">3. How comfortable are you with command-line interfaces?</button>
+                  <div class="quiz-question-panel">
+                    <div class="options">
+                      <label class="option"><input type="radio" name="q3" value="1" required>I've never used a command-line interface</label>
+                      <label class="option"><input type="radio" name="q3" value="2">I know basic commands but rarely use them</label>
+                      <label class="option"><input type="radio" name="q3" value="3">I'm comfortable using command-line for common tasks</label>
+                      <label class="option"><input type="radio" name="q3" value="4">I use command-line interfaces regularly and confidently</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Question 4 -->
+                <div class="quiz-item">
+                  <button type="button" class="quiz-question-header" aria-expanded="false">4. What is your understanding of basic server concepts?</button>
+                  <div class="quiz-question-panel">
+                    <div class="options">
+                      <label class="option"><input type="radio" name="q4" value="1" required>I have little to no knowledge of servers</label>
+                      <label class="option"><input type="radio" name="q4" value="2">I understand what servers do but haven't configured one</label>
+                      <label class="option"><input type="radio" name="q4" value="3">I've worked with servers before but not extensively</label>
+                      <label class="option"><input type="radio" name="q4" value="4">I'm experienced with server configuration and management</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Question 5 -->
+                <div class="quiz-item">
+                  <button type="button" class="quiz-question-header" aria-expanded="false">5. How would you rate your understanding of compilation, execution, and testing processes?</button>
+                  <div class="quiz-question-panel">
+                    <div class="options">
+                      <label class="option"><input type="radio" name="q5" value="1" required>I have a basic understanding of these concepts</label>
+                      <label class="option"><input type="radio" name="q5" value="2">I understand how they work for one programming language</label>
+                      <label class="option"><input type="radio" name="q5" value="3">I'm comfortable with these processes across multiple languages</label>
+                      <label class="option"><input type="radio" name="q5" value="4">I have in-depth knowledge of build processes and testing frameworks</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Question 6 -->
+                <div class="quiz-item">
+                  <button type="button" class="quiz-question-header" aria-expanded="false">6. What experience do you have with Linux/Unix systems?</button>
+                  <div class="quiz-question-panel">
+                    <div class="options">
+                      <label class="option"><input type="radio" name="q6" value="1" required>I have no experience with Linux/Unix</label>
+                      <label class="option"><input type="radio" name="q6" value="2">I've used Linux occasionally but not for administration</label>
+                      <label class="option"><input type="radio" name="q6" value="3">I'm comfortable using Linux and basic system administration</label>
+                      <label class="option"><input type="radio" name="q6" value="4">I have extensive Linux/Unix administration experience</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Question 7 -->
+                <div class="quiz-item">
+                  <button type="button" class="quiz-question-header" aria-expanded="false">7. How familiar are you with networking concepts (HTTP, SSL/TLS, ports, etc.)?</button>
+                  <div class="quiz-question-panel">
+                    <div class="options">
+                      <label class="option"><input type="radio" name="q7" value="1" required>I have minimal knowledge of networking</label>
+                      <label class="option"><input type="radio" name="q7" value="2">I understand basic concepts but haven't configured networks</label>
+                      <label class="option"><input type="radio" name="q7" value="3">I'm comfortable with common networking tasks and configurations</label>
+                      <label class="option"><input type="radio" name="q7" value="4">I have advanced networking knowledge and experience</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Question 8 -->
+                <div class="quiz-item">
+                  <button type="button" class="quiz-question-header" aria-expanded="false">8. What is your experience with creating programming assignments?</button>
+                  <div class="quiz-question-panel">
+                    <div class="options">
+                      <label class="option"><input type="radio" name="q8" value="1" required>I have limited or no experience creating programming assignments</label>
+                      <label class="option"><input type="radio" name="q8" value="2">I've created basic assignments without automatic testing</label>
+                      <label class="option"><input type="radio" name="q8" value="3">I regularly create assignments with clear requirements and test cases</label>
+                      <label class="option"><input type="radio" name="q8" value="4">I design comprehensive assignments with advanced testing strategies</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Question 9 -->
+                <div class="quiz-item">
+                  <button type="button" class="quiz-question-header" aria-expanded="false">9. How would you rate your ability to evaluate code quality and correctness?</button>
+                  <div class="quiz-question-panel">
+                    <div class="options">
+                      <label class="option"><input type="radio" name="q9" value="1" required>I can check if code produces correct output</label>
+                      <label class="option"><input type="radio" name="q9" value="2">I can identify common errors and basic quality issues</label>
+                      <label class="option"><input type="radio" name="q9" value="3">I evaluate code structure, efficiency, and good practices</label>
+                      <label class="option"><input type="radio" name="q9" value="4">I have advanced knowledge of code quality metrics and optimization</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Question 10 -->
+                <div class="quiz-item">
+                  <button type="button" class="quiz-question-header" aria-expanded="false">10. How comfortable are you with following detailed technical documentation?</button>
+                  <div class="quiz-question-panel">
+                    <div class="options">
+                      <label class="option"><input type="radio" name="q10" value="1" required>I find technical documentation challenging to follow</label>
+                      <label class="option"><input type="radio" name="q10" value="2">I can follow documentation with help occasionally</label>
+                      <label class="option"><input type="radio" name="q10" value="3">I'm comfortable following most technical documentation</label>
+                      <label class="option"><input type="radio" name="q10" value="4">I excel at interpreting and applying technical documentation</label>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            
-            <!-- Question 2 -->
-            <div class="question">
-              <h3>2. What is your level of familiarity with programming languages?</h3>
-              <div class="options">
-                <label class="option">
-                  <input type="radio" name="q2" value="1" required>
-                  I know basic concepts but haven't taught programming
-                </label>
-                <label class="option">
-                  <input type="radio" name="q2" value="2">
-                  I'm comfortable with one programming language
-                </label>
-                <label class="option">
-                  <input type="radio" name="q2" value="3">
-                  I'm proficient in multiple programming languages
-                </label>
-                <label class="option">
-                  <input type="radio" name="q2" value="4">
-                  I have professional/industry experience in software development
-                </label>
+              <div class="submit-section">
+                <button type="submit" class="btn btn-primary">Submit Assessment</button>
               </div>
-            </div>
-            
-            <!-- Question 3 -->
-            <div class="question">
-              <h3>3. How comfortable are you with command-line interfaces?</h3>
-              <div class="options">
-                <label class="option">
-                  <input type="radio" name="q3" value="1" required>
-                  I've never used a command-line interface
-                </label>
-                <label class="option">
-                  <input type="radio" name="q3" value="2">
-                  I know basic commands but rarely use them
-                </label>
-                <label class="option">
-                  <input type="radio" name="q3" value="3">
-                  I'm comfortable using command-line for common tasks
-                </label>
-                <label class="option">
-                  <input type="radio" name="q3" value="4">
-                  I use command-line interfaces regularly and confidently
-                </label>
+            </form>
+            <div id="quiz-result" class="result-container" style="display: none;">
+              <div class="result-header">
+                <div class="score"><span id="score-value">0</span>/40</div>
+                <div id="level" class="level">Calculating your result...</div>
               </div>
-            </div>
-            
-            <!-- Question 4 -->
-            <div class="question">
-              <h3>4. What is your understanding of basic server concepts?</h3>
-              <div class="options">
-                <label class="option">
-                  <input type="radio" name="q4" value="1" required>
-                  I have little to no knowledge of servers
-                </label>
-                <label class="option">
-                  <input type="radio" name="q4" value="2">
-                  I understand what servers do but haven't configured one
-                </label>
-                <label class="option">
-                  <input type="radio" name="q4" value="3">
-                  I've worked with servers before but not extensively
-                </label>
-                <label class="option">
-                  <input type="radio" name="q4" value="4">
-                  I'm experienced with server configuration and management
-                </label>
+              <div class="result-content">
+                <p id="description"></p>
+                <p><strong>What to expect:</strong> <span id="expectations"></span></p>
+                <p><strong>Student impact:</strong> <span id="impact"></span></p>
               </div>
-            </div>
-            
-            <!-- Question 5 -->
-            <div class="question">
-              <h3>5. How would you rate your understanding of compilation, execution, and testing processes?</h3>
-              <div class="options">
-                <label class="option">
-                  <input type="radio" name="q5" value="1" required>
-                  I have a basic understanding of these concepts
-                </label>
-                <label class="option">
-                  <input type="radio" name="q5" value="2">
-                  I understand how they work for one programming language
-                </label>
-                <label class="option">
-                  <input type="radio" name="q5" value="3">
-                  I'm comfortable with these processes across multiple languages
-                </label>
-                <label class="option">
-                  <input type="radio" name="q5" value="4">
-                  I have in-depth knowledge of build processes and testing frameworks
-                </label>
+              <div class="recommendations">
+                <h3>Next Steps and Recommendations:</h3>
+                <ul id="steps"></ul>
               </div>
+              <button id="retake-quiz" class="btn btn-secondary">Retake Assessment</button>
             </div>
-            
-            <!-- Question 6 -->
-            <div class="question">
-              <h3>6. What experience do you have with Linux/Unix systems?</h3>
-              <div class="options">
-                <label class="option">
-                  <input type="radio" name="q6" value="1" required>
-                  I have no experience with Linux/Unix
-                </label>
-                <label class="option">
-                  <input type="radio" name="q6" value="2">
-                  I've used Linux occasionally but not for administration
-                </label>
-                <label class="option">
-                  <input type="radio" name="q6" value="3">
-                  I'm comfortable using Linux and basic system administration
-                </label>
-                <label class="option">
-                  <input type="radio" name="q6" value="4">
-                  I have extensive Linux/Unix administration experience
-                </label>
-              </div>
-            </div>
-            
-            <!-- Question 7 -->
-            <div class="question">
-              <h3>7. How familiar are you with networking concepts (HTTP, SSL/TLS, ports, etc.)?</h3>
-              <div class="options">
-                <label class="option">
-                  <input type="radio" name="q7" value="1" required>
-                  I have minimal knowledge of networking
-                </label>
-                <label class="option">
-                  <input type="radio" name="q7" value="2">
-                  I understand basic concepts but haven't configured networks
-                </label>
-                <label class="option">
-                  <input type="radio" name="q7" value="3">
-                  I'm comfortable with common networking tasks and configurations
-                </label>
-                <label class="option">
-                  <input type="radio" name="q7" value="4">
-                  I have advanced networking knowledge and experience
-                </label>
-              </div>
-            </div>
-            
-            <!-- Question 8 -->
-            <div class="question">
-              <h3>8. What is your experience with creating programming assignments?</h3>
-              <div class="options">
-                <label class="option">
-                  <input type="radio" name="q8" value="1" required>
-                  I have limited or no experience creating programming assignments
-                </label>
-                <label class="option">
-                  <input type="radio" name="q8" value="2">
-                  I've created basic assignments without automatic testing
-                </label>
-                <label class="option">
-                  <input type="radio" name="q8" value="3">
-                  I regularly create assignments with clear requirements and test cases
-                </label>
-                <label class="option">
-                  <input type="radio" name="q8" value="4">
-                  I design comprehensive assignments with advanced testing strategies
-                </label>
-              </div>
-            </div>
-            
-            <!-- Question 9 -->
-            <div class="question">
-              <h3>9. How would you rate your ability to evaluate code quality and correctness?</h3>
-              <div class="options">
-                <label class="option">
-                  <input type="radio" name="q9" value="1" required>
-                  I can check if code produces correct output
-                </label>
-                <label class="option">
-                  <input type="radio" name="q9" value="2">
-                  I can identify common errors and basic quality issues
-                </label>
-                <label class="option">
-                  <input type="radio" name="q9" value="3">
-                  I evaluate code structure, efficiency, and good practices
-                </label>
-                <label class="option">
-                  <input type="radio" name="q9" value="4">
-                  I have advanced knowledge of code quality metrics and optimization
-                </label>
-              </div>
-            </div>
-            
-            <!-- Question 10 -->
-            <div class="question">
-              <h3>10. How comfortable are you with following detailed technical documentation?</h3>
-              <div class="options">
-                <label class="option">
-                  <input type="radio" name="q10" value="1" required>
-                  I find technical documentation challenging to follow
-                </label>
-                <label class="option">
-                  <input type="radio" name="q10" value="2">
-                  I can follow documentation with help occasionally
-                </label>
-                <label class="option">
-                  <input type="radio" name="q10" value="3">
-                  I'm comfortable following most technical documentation
-                </label>
-                <label class="option">
-                  <input type="radio" name="q10" value="4">
-                  I excel at interpreting and applying technical documentation
-                </label>
-              </div>
-            </div>
-            
-            <div class="submit-section">
-              <button type="submit" class="btn btn-primary">Submit Assessment</button>
-            </div>
-          </form>
-          
-          <div id="result" class="result-container" style="display: none;">
-            <div class="result-header">
-              <div class="score"><span id="score-value">0</span>/40</div>
-              <div id="level" class="level">Calculating your result...</div>
-            </div>
-            
-            <div class="result-content">
-              <p id="description"></p>
-              <p><strong>What to expect:</strong> <span id="expectations"></span></p>
-              <p><strong>Student impact:</strong> <span id="impact"></span></p>
-            </div>
-            
-            <div class="recommendations">
-              <h3>Next Steps and Recommendations:</h3>
-              <ul id="steps"></ul>
-            </div>
-            
-            <button id="retake-btn" class="btn btn-secondary">Retake Assessment</button>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
     <section id="faq" class="section faq-section">
       <div class="container">
@@ -1194,8 +1080,8 @@ output =
           <div class="footer-link-group">
             <h3>Contact</h3>
             <ul>
-              <li><a href="mailto:support@example.com"><i class="fas fa-envelope"></i> support@example.com</a></li>
-              <li><a href="https://example.com"><i class="fas fa-globe"></i> www.example.com</a></li>
+              <li><a href="mailto:roy@pshs.edu.ph"><i class="fas fa-envelope"></i> roy@pshs.edu.ph</a></li>
+              <li><a href="https://pshs.mc.edu.ph"><i class="fas fa-globe"></i> www.pshs.mc.edu.ph</a></li>
             </ul>
           </div>
         </div>
@@ -1204,9 +1090,9 @@ output =
       <div class="footer-bottom">
         <p>&copy; <span id="current-year"></span> VPL for CS Educators. All rights reserved.</p>
         <div class="social-links">
-          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/roycan/vpl_share" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <!-- <a href="#" aria-label="Twitter" class="disabled-link" tabindex="-1" aria-disabled="true"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn" class="disabled-link" tabindex="-1" aria-disabled="true"><i class="fab fa-linkedin"></i></a> -->
         </div>
       </div>
     </div>
@@ -1217,14 +1103,14 @@ output =
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const quizForm = document.getElementById('quiz-form');
-      const resultContainer = document.getElementById('result');
+      const resultContainer = document.getElementById('quiz-result');
       const scoreValue = document.getElementById('score-value');
       const levelEl = document.getElementById('level');
       const descriptionEl = document.getElementById('description');
       const expectationsEl = document.getElementById('expectations');
       const impactEl = document.getElementById('impact');
       const stepsEl = document.getElementById('steps');
-      const retakeButton = document.getElementById('retake-btn');
+      const retakeButton = document.getElementById('retake-quiz');
       
       // Define the readiness levels
       const readinessLevels = {
@@ -1287,53 +1173,55 @@ output =
       };
       
       // Calculate score and show result
-      if (quizForm) {
-        quizForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          
-          const formData = new FormData(quizForm);
-          let score = 0;
-          
-          // Calculate total score
-          for (const value of formData.values()) {
-            score += parseInt(value);
+      function calculateResult() {
+        const formData = new FormData(quizForm);
+        let score = 0;
+        
+        // Calculate total score
+        for (const value of formData.values()) {
+          score += parseInt(value);
+        }
+        
+        // Determine readiness level
+        let level = 'expert';
+        for (const key in readinessLevels) {
+          const range = readinessLevels[key].range;
+          if (score >= range[0] && score <= range[1]) {
+            level = key;
+            break;
           }
-          
-          // Determine readiness level
-          let level = 'expert';
-          for (const key in readinessLevels) {
-            const range = readinessLevels[key].range;
-            if (score >= range[0] && score <= range[1]) {
-              level = key;
-              break;
-            }
-          }
-          
-          const levelData = readinessLevels[level];
-          
-          // Update result elements
-          scoreValue.textContent = score;
-          levelEl.textContent = levelData.title;
-          descriptionEl.textContent = levelData.description;
-          expectationsEl.textContent = levelData.expectations;
-          impactEl.textContent = levelData.impact;
-          
-          // Add recommendation steps
-          stepsEl.innerHTML = '';
-          levelData.steps.forEach(step => {
-            const li = document.createElement('li');
-            li.textContent = step;
-            stepsEl.appendChild(li);
-          });
-          
-          // Show result container
-          quizForm.style.display = 'none';
-          resultContainer.style.display = 'block';
-          
-          // Scroll to result
-          resultContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        const levelData = readinessLevels[level];
+        
+        // Update result elements
+        scoreValue.textContent = score;
+        levelEl.textContent = levelData.title;
+        descriptionEl.textContent = levelData.description;
+        expectationsEl.textContent = levelData.expectations;
+        impactEl.textContent = levelData.impact;
+        
+        // Add recommendation steps
+        stepsEl.innerHTML = '';
+        levelData.steps.forEach(step => {
+          const li = document.createElement('li');
+          li.textContent = step;
+          stepsEl.appendChild(li);
         });
+        
+        // Show result container
+        quizForm.style.display = 'none';
+        resultContainer.style.display = 'block';
+        
+        // Scroll to result
+        resultContainer.scrollIntoView({ behavior: 'smooth' });
       }
+      
+      // Form submit event
+      quizForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        calculateResult();
+      });
       
       // Retake quiz button
       if (retakeButton) {

@@ -197,3 +197,135 @@ templateAccordionHeaders.forEach(header => {
 window.addEventListener('DOMContentLoaded', () => {
   templateAccordionPanels.forEach(p => p.style.display = 'none');
 });
+
+// === Quiz Stepper Logic ===
+document.addEventListener('DOMContentLoaded', function () {
+  const quizQuestions = document.querySelectorAll('#quiz-questions .question');
+  const prevButton = document.getElementById('prev-button');
+  const nextButton = document.getElementById('next-button');
+  const progressFill = document.querySelector('.progress-fill');
+  const questionNumber = document.getElementById('question-number');
+  const quizResult = document.getElementById('quiz-result');
+  const retakeQuiz = document.getElementById('retake-quiz');
+  const quizForm = document.getElementById('quiz-form');
+  const questionsContainer = document.getElementById('quiz-questions');
+
+  let currentQuestion = 1;
+  const totalQuestions = quizQuestions.length;
+  let answers = {};
+
+  function showQuestion(questionNum) {
+    quizQuestions.forEach(q => {
+      if (parseInt(q.getAttribute('data-question')) === questionNum) {
+        q.style.display = '';
+      } else {
+        q.style.display = 'none';
+      }
+    });
+    questionNumber.textContent = `Question ${questionNum}/${totalQuestions}`;
+    progressFill.style.width = `${(questionNum / totalQuestions) * 100}%`;
+    prevButton.disabled = questionNum === 1;
+    // Set next/submit button
+    if (questionNum === totalQuestions) {
+      nextButton.textContent = 'Submit';
+      nextButton.classList.add('submit');
+    } else {
+      nextButton.textContent = 'Next';
+      nextButton.classList.remove('submit');
+    }
+    // Enable/disable next based on answer
+    const radios = quizQuestions[questionNum - 1].querySelectorAll('input[type="radio"]');
+    let answered = false;
+    radios.forEach(r => { if (r.checked) answered = true; });
+    nextButton.disabled = !answered;
+  }
+
+  // On radio change, enable next
+  quizQuestions.forEach((q, idx) => {
+    const radios = q.querySelectorAll('input[type="radio"]');
+    radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        answers[`q${idx + 1}`] = radio.value;
+        nextButton.disabled = false;
+      });
+    });
+  });
+
+  prevButton.addEventListener('click', () => {
+    if (currentQuestion > 1) {
+      currentQuestion--;
+      showQuestion(currentQuestion);
+    }
+  });
+
+  nextButton.addEventListener('click', () => {
+    if (currentQuestion < totalQuestions) {
+      currentQuestion++;
+      showQuestion(currentQuestion);
+    } else {
+      // Submit quiz
+      quizForm.style.display = 'none';
+      quizResult.style.display = 'block';
+      // Calculate and show result (existing logic)
+      if (typeof calculateAndShowQuizResult === 'function') {
+        calculateAndShowQuizResult(answers);
+      }
+    }
+  });
+
+  // Retake quiz
+  if (retakeQuiz) {
+    retakeQuiz.addEventListener('click', function () {
+      answers = {};
+      quizQuestions.forEach((q, idx) => {
+        const radios = q.querySelectorAll('input[type="radio"]');
+        radios.forEach(r => { r.checked = false; });
+      });
+      currentQuestion = 1;
+      quizForm.style.display = 'block';
+      quizResult.style.display = 'none';
+      showQuestion(currentQuestion);
+    });
+  }
+
+  // On load, show first question only
+  if (quizQuestions.length > 0) {
+    showQuestion(currentQuestion);
+  }
+});
+
+// Quiz Accordion Logic
+const quizAccordionHeaders = document.querySelectorAll('.quiz-accordion .quiz-question-header');
+const quizAccordionPanels = document.querySelectorAll('.quiz-accordion .quiz-question-panel');
+
+quizAccordionHeaders.forEach((header, idx) => {
+  header.addEventListener('click', function () {
+    const isActive = header.getAttribute('aria-expanded') === 'true';
+    // Close all panels
+    quizAccordionHeaders.forEach((h, i) => {
+      h.setAttribute('aria-expanded', 'false');
+      quizAccordionPanels[i].style.display = 'none';
+    });
+    // Open clicked panel if it was not already open
+    if (!isActive) {
+      header.setAttribute('aria-expanded', 'true');
+      quizAccordionPanels[idx].style.display = 'block';
+      // Optional: scroll into view for mobile
+      setTimeout(() => {
+        header.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    }
+  });
+});
+// On page load, show only the first question open
+window.addEventListener('DOMContentLoaded', () => {
+  quizAccordionHeaders.forEach((h, i) => {
+    if (i === 0) {
+      h.setAttribute('aria-expanded', 'true');
+      quizAccordionPanels[i].style.display = 'block';
+    } else {
+      h.setAttribute('aria-expanded', 'false');
+      quizAccordionPanels[i].style.display = 'none';
+    }
+  });
+});

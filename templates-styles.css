@@ -1,0 +1,105 @@
+/* Templates Section Styles */
+.templates-section {
+  background-color: white;
+  padding-bottom: 3rem;
+}
+
+.templates-tabs {
+  margin: 2rem 0;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.templates-tabs .tab-button {
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  background-color: var(--gray-100);
+}
+
+.templates-tabs .tab-button.active {
+  background-color: var(--primary-600);
+  color: white;
+  border-bottom: none;
+}
+
+.template-files {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.template-file {
+  width: 100%;
+  min-width: 0;
+  background-color: var(--gray-50);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--gray-200);
+}
+
+.template-file h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--gray-800);
+}
+
+.code-block {
+  overflow-x: auto;
+  white-space: pre;
+  display: block;
+  max-width: 100%;
+  background: #f8f8f8;
+  border-radius: 6px;
+  padding: 1em;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+
+.templates-guide {
+  background-color: var(--primary-50);
+  border-left: 4px solid var(--primary-400);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.templates-guide h3 {
+  margin-top: 0;
+  color: var(--primary-700);
+}
+
+.templates-guide ol {
+  padding-left: 1.25rem;
+  margin: 1rem 0 0;
+}
+
+.templates-guide li {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .template-files {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .template-files {
+    flex-direction: column;
+  }
+}

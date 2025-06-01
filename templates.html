@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VPL Assignment Templates - Virtual Programming Lab Guide</title>
+  <meta name="description" content="Ready-to-use Virtual Programming Lab (VPL) assignment templates for CS educators.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Template-specific styles */
+    .template-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .template-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .template-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #1f2937;
+    }
+    
+    .language-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      background-color: #e5e7eb;
+      color: #1f2937;
+    }
+    
+    .language-badge.python {
+      background-color: #3776ab;
+      color: white;
+    }
+    
+    .language-badge.java {
+      background-color: #ed8b00;
+      color: white;
+    }
+    
+    .language-badge.cpp {
+      background-color: #00599c;
+      color: white;
+    }
+    
+    .template-description {
+      margin-bottom: 1rem;
+      color: #4b5563;
+    }
+    
+    .template-content {
+      margin-bottom: 1.5rem;
+    }
+    
+    .template-files {
+      background-color: #f9fafb;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .file-item {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .file-item:last-child {
+      border-bottom: none;
+    }
+    
+    .file-icon {
+      margin-right: 0.75rem;
+      color: #4b5563;
+    }
+    
+    .file-name {
+      font-family: monospace;
+      color: #1f2937;
+    }
+    
+    .code-block {
+      background-color: #1f2937;
+      color: #f9fafb;
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: monospace;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+    
+    .template-actions {
+      text-align: right;
+    }
+    
+    .copy-btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      border: 1px solid #6b7280;
+      background-color: white;
+      color: #4b5563;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .copy-btn:hover {
+      background-color: #f3f4f6;
+    }
+    
+    .template-details {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    .template-details h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #1f2937;
+    }
+    
+    .template-details ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .template-details li {
+      margin-bottom: 0.25rem;
+    }
+  </style>
+  
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="VPL Assignment Templates - Virtual Programming Lab Guide">
+  <meta property="og:description" content="Ready-to-use Virtual Programming Lab (VPL) assignment templates for CS educators.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vpl-guide.example.com/templates.html">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <span class="logo-text">VPL Guide</span>
+          </a>
+        </div>
+        
+        <nav class="desktop-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link home-link">Home</a></li>
+            <li><a href="what-is-vpl.html" class="nav-link what-is-vpl-link">What is VPL?</a></li>
+            <li><a href="modern-classroom.html" class="nav-link modern-classroom-link">Modern Classroom</a></li>
+            <li><a href="implementation-guide.html" class="nav-link implementation-link">Implementation</a></li>
+            <li><a href="templates.html" class="nav-link templates-link active">Templates</a></li>
+            <li><a href="readiness-quiz.html" class="nav-link quiz-link">Readiness Quiz</a></li>
+            <li><a href="resources.html" class="nav-link resources-link">Resources</a></li>
+            <li><a href="faq.html" class="nav-link faq-link">FAQ</a></li>
+          </ul>
+        </nav>
+        
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span class="hamburger"></span>
+        </button>
+      </div>
+      
+      <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link home-link">Home</a></li>
+          <li><a href="what-is-vpl.html" class="mobile-nav-link what-is-vpl-link">What is VPL?</a></li>
+          <li><a href="modern-classroom.html" class="mobile-nav-link modern-classroom-link">Modern Classroom</a></li>
+          <li><a href="implementation-guide.html" class="mobile-nav-link implementation-link">Implementation</a></li>
+          <li><a href="templates.html" class="mobile-nav-link templates-link active">Templates</a></li>
+          <li><a href="readiness-quiz.html" class="mobile-nav-link quiz-link">Readiness Quiz</a></li>
+          <li><a href="resources.html" class="mobile-nav-link resources-link">Resources</a></li>
+          <li><a href="faq.html" class="mobile-nav-link faq-link">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>VPL Assignment Templates</h1>
+      <p>Ready-to-use templates for creating effective programming assignments</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-intro">
+        <p>These templates provide a starting point for creating effective VPL assignments. Each template includes the necessary files and scripts for automated evaluation. Simply copy the code and customize it to fit your specific assignment requirements.</p>
+        <div class="filter-options">
+          <span class="filter-label">Filter by language:</span>
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="python">Python</button>
+          <button class="filter-btn" data-filter="java">Java</button>
+          <button class="filter-btn" data-filter="cpp">C/C++</button>
+        </div>
+      </div>
+      
+      <div class="templates-container">
+        <!-- Python Basic Assignment Template -->
+        <div class="template-card" data-language="python">
+          <div class="template-header">
+            <h2 class="template-title">Basic Python Assignment</h2>
+            <span class="language-badge python">Python</span>
+          </div>
+          
+          <p class="template-description">A simple template for Python assignments that test basic input/output functionality.</p>
+          
+          <div class="template-content">
+            <h3>Required Files</h3>
+            <div class="template-files">
+              <div class="file-item">
+                <i class="file-icon fas fa-file-code"></i>
+                <span class="file-name">vpl_run.sh</span>
+              </div>
+              <div class="file-item">
+                <i class="file-icon fas fa-file-code"></i>
+                <span class="file-name">vpl_evaluate.sh</span>
+              </div>
+              <div class="file-item">
+                <i class="file-icon fas fa-file-alt"></i>
+                <span class="file-name">vpl_test.cases</span>
+              </div>
+            </div>
+            
+            <h3>vpl_run.sh</h3>
+            <div class="code-block">#!/bin/bash
+python3 $VPL_SRCFILE</div>
+            <div class="template-actions">
+              <button class="copy-btn" data-code="#!/bin/bash
+python3 $VPL_SRCFILE">Copy Code</button>
+            </div>
+            
+            <h3>vpl_evaluate.sh</h3>
+            <div class="code-block">#!/bin/bash
+# Load common script and grade functions
+. vpl_environment.sh
+
+# Run the program with test cases
+cat > vpl_execution << "END_SCRIPT"
+#!/bin/bash
+python3 $VPL_SRCFILE < vpl_test.cases
+END_SCRIPT
+
+# Make the execution script executable
+chmod +x vpl_execution
+
+# Run the test cases and capture output
+./vpl_execution > student_output.txt
+
+# Load the expected output
+cat > expected_output.txt << "END_OUTPUT"
+Sum: 30
+Sum: 70
+Sum: 0
+END_OUTPUT
+
+# Compare student output with expected output
+DIFF=$(diff -w student_output.txt expected_output.txt)
+
+# Grading logic
+VPL_GRADEMAX=100
+if [ -z "$DIFF" ]; then
+    # Perfect match
+    VPL_GRADE=100
+    COMMENT="Perfect! Your program produces the correct output."
+else
+    # Some differences
+    VPL_GRADE=0
+    COMMENT="Your program output doesn't match the expected output."
+    echo "<|--"
+    echo "$DIFF"
+    echo "--|>"
+fi
+
+# Display feedback
+echo "Grade: $VPL_GRADE/$VPL_GRADEMAX"
+echo -e "$COMMENT"</div>
+            <div class="template-actions">
+              <button class="copy-btn" data-code="#!/bin/bash
+# Load common script and grade functions
+. vpl_environment.sh
+
+# Run the program with test cases
+cat > vpl_execution << "END_SCRIPT"
+#!/bin/bash
+python3 $VPL_SRCFILE < vpl_test.cases
+END_SCRIPT
+
+# Make the execution script executable
+chmod +x vpl_execution
+
+# Run the test cases and capture output
+./vpl_execution > student_output.txt
+
+# Load the expected output
+cat > expected_output.txt << "END_OUTPUT"
+Sum: 30
+Sum: 70
+Sum: 0
+END_OUTPUT
+
+# Compare student output with expected output
+DIFF=$(diff -w student_output.txt expected_output.txt)
+
+# Grading logic
+VPL_GRADEMAX=100
+if [ -z "$DIFF" ]; then
+    # Perfect match
+    VPL_GRADE=100
+    COMMENT="Perfect! Your program produces the correct output."
+else
+    # Some differences
+    VPL_GRADE=0
+    COMMENT="Your program output doesn't match the expected output."
+    echo "<|--"
+    echo "$DIFF"
+    echo "--|>"
+fi
+
+# Display feedback
+echo "Grade: $VPL_GRADE/$VPL_GRADEMAX"
+echo -e "$COMMENT"">Copy Code</button>
+            </div>
+            
+            <h3>vpl_test.cases</h3>
+            <div class="code-block">10 20
+30 40
+-5 5</div>
+            <div class="template-actions">
+              <button class="copy-btn" data-code="10 20
+30 40
+-5 5">Copy Code</button>
+            </div>
+            
+            <h3>Example Student Solution (for reference)</h3>
+            <div class="code-block"># Add two numbers from input
+# Read input line by line
+line = input().strip()
+nums = line.split()
+a = int(nums[0])
+b = int(nums[1])
+print(f"Sum: {a + b}")
+
+line = input().strip()
+nums = line.split()
+a = int(nums[0])
+b = int(nums[1])
+print(f"Sum: {a + b}")
+
+line = input().strip()
+nums = line.split()
+a = int(nums[0])
+b = int(nums[1])
+print(f"Sum: {a + b}")</div>
+            <div class="template-actions">
+              <button class="copy-btn" data-code="# Add two numbers from input
+# Read input line by line
+line = input().strip()
+nums = line.split()
+a = int(nums[0])
+b = int(nums[1])
+print(f"Sum: {a + b}")
+
+line = input().strip()
+nums = line.split()
+a = int(nums[0])
+b = int(nums[1])
+print(f"Sum: {a + b}")
+
+line = input().strip()
+nums = line.split()
+a = int(nums[0])
+b = int(nums[1])
+print(f"Sum: {a + b}")">Copy Code</button>
+            </div>
+          </div>
+          
+          <div class="template-details">
+            <h4>Assignment Description Example:</h4>
+            <p>Create a Python program that reads pairs of integers from input and outputs their sum. The program should process each line of input separately and output the sum for each pair.</p>
+            
+            <h4>Customization Tips:</h4>
+            <ul>
+              <li>Modify the expected output to match your specific assignment requirements</li>
+              <li>Add more test cases to thoroughly test different scenarios</li>
+              <li>Adjust the grading criteria based on the difficulty of the assignment</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Java Basic Assignment Template -->
+        <div class="template-card" data-language="java">
+          <div class="template-header">
+            <h2 class="template-title">Basic Java Assignment</h2>
+            <span class="language-badge java">Java</span>
+          </div>
+          
+          <p class="template-description">A template for simple Java assignments with compilation and execution.</p>
+          
+          <div class="template-content">
+            <h3>Required Files</h3>
+            <div class="template-files">
+              <div class="file-item">
+                <i class="file-icon fas fa-file-code"></i>
+                <span class="file-name">vpl_run.sh</span>
+              </div>
+              <div class="file-item">
+                <i class="file-icon fas fa-file-code"></i>
+                <span class="file-name">vpl_evaluate.sh</span>
+              </div>
+              <div class="file-item">
+                <i class="file-icon fas fa-file-alt"></i>
+                <span class="file-name">vpl_test.cases</span>
+              </div>
+            </div>
+            
+            <h3>vpl_run.sh</h3>
+            <div class="code-block">#!/bin/bash
+# Compile Java file
+javac *.java
+# Run Java program (assumes Main class with main method)
+java Main</div>
+            <div class="template-actions">
+              <button class="copy-btn" data-code="#!/bin/bash
+# Compile Java file
+javac *.java
+# Run Java program (assumes Main class with main method)
+java Main">Copy Code</button>
+            </div>
+            
+            <h3>vpl_evaluate.sh</h3>
+            <div class="code-block">#!/bin/bash
+# Load common script and grade functions
+. vpl_environment.sh
+
+# Compile Java file first
+javac *.java
+if [ $? -ne 0 ] ; then
+    echo "Compilation error"
+    exit 0
+fi
+
+# Run the program with test cases
+cat > vpl_execution << "END_SCRIPT"
+#!/bin/bash
+java Main < vpl_test.cases
+END_SCRIPT
+
+# Make the execution script executable
+chmod +x vpl_execution
+
+# Run the test cases and capture output
+./vpl_execution > student_output.txt
+
+# Load the expected output
+cat > expected_output.txt << "END_OUTPUT"
+Sum: 30
+Sum: 70
+Sum: 0
+END_OUTPUT
+
+# Compare student output with expected output
+DIFF=$(diff -w student_output.txt expected_output.txt)
+
+# Grading logic
+VPL_GRADEMAX=100
+if [ -z "$DIFF" ]; then
+    # Perfect match
+    VPL_GRADE=100
+    COMMENT="Perfect! Your program produces the correct output."
+else
+    # Some differences
+    VPL_GRADE=0
+    COMMENT="Your program output doesn't match the expected output."
+    echo "<|--"
+    echo "$DIFF"
+    echo "--|>"
+fi
+
+# Display feedback
+echo "Grade: $VPL_GRADE/$VPL_GRADEMAX"
+echo -e "$COMMENT"</div>
+            <div class="template-actions">
+              <button class="copy-btn" data-code="#!/bin/bash
+# Load common script and grade functions
+. vpl_environment.sh
+
+# Compile Java file first
+javac *.java
+if [ $? -ne 0 ] ; then
+    echo "Compilation error"
+    exit 0
+fi
+
+# Run the program with test cases
+cat > vpl_execution << "END_SCRIPT"
+#!/bin/bash
+java Main < vpl_test.cases
+END_SCRIPT
+
+# Make the execution script executable
+chmod +x vpl_execution
+
+# Run the test cases and capture output
+./vpl_execution > student_output.txt
+
+# Load the expected output
+cat > expected_output.txt << "END_OUTPUT"
+Sum: 30
+Sum: 70
+Sum: 0
+END_OUTPUT
+
+# Compare student output with expected output
+DIFF=$(diff -w student_output.txt expected_output.txt)
+
+# Grading logic
+VPL_GRADEMAX=100
+if [ -z "$DIFF" ]; then
+    # Perfect match
+    VPL_GRADE=100
+    COMMENT="Perfect! Your program produces the correct output."
+else
+    # Some differences
+    VPL_GRADE=0
+    COMMENT="Your program output doesn't match the expected output."
+    echo "<|--"
+    echo "$DIFF"
+    echo "--|>"
+fi
+
+# Display feedback
+echo "Grade: $VPL_GRADE/$VPL_GRADEMAX"
+echo -e "$COMMENT"">Copy Code</button>
+            </div>
+            
+            <h3>vpl_test.cases</h3>
+            <div class="code-block">10 20
+30 40
+-5 5</div>
+            <div class="template-actions">
+              <button class="copy-btn" data-code="10 20
+30 40
+-5 5">Copy Code</button>
+            </div>
+            
+            <h3>Example Student Solution (for reference)</h3>
+            <div class="code-block">import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            String[] nums = line.split(" ");
+            int a = Integer.parseInt(nums[0]);
+            int b = Integer.parseInt(nums[1]);
+            System.out.println("Sum: " + (a + b));
+        }
+        
+        scanner.close();
+    }
+}</div>
+            <div class="template-actions">
+              <button class="copy-btn" data-code="import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            String[] nums = line.split(" ");
+            int a = Integer.parseInt(nums[0]);
+            int b = Integer.parseInt(nums[1]);
+            System.out.println("Sum: " + (a + b));
+        }
+        
+        scanner.close();
+    }
+}">Copy Code</button>
+            </div>
+          </div>
+          
+          <div class="template-details">
+            <h4>Assignment Description Example:</h4>
+            <p>Create a Java program that reads pairs of integers from input and outputs their sum. The program should process each line of input separately and output the sum for each pair.</p>
+            
+            <h4>Customization Tips:</h4>
+            <ul>
+              <li>Modify the expected output to match your specific assignment requirements</li>
+              <li>If the student solution uses a different class name, update the vpl_run.sh script</li>
+              <li>Add additional test cases to verify edge cases or error handling</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- C/C++ Basic Assignment Template -->
+        <div class="template-card" data-language="cpp">
+          <div class="template-header">
+            <h2 class="template-title">Basic C/C++ Assignment</h2>
+            <span class="language-badge cpp">C/C++</span>
+          </div>
+          
+          <p class="template-description">A template for C/C++ assignments with compilation and execution.</p>
+          
+          <div class="template-content">
+            <h3>Required Files</h3>
+            <div class="template-files">
+              <div class="file-item">
+                <i class="file-icon fas fa-file-code"></i>
+                <span class="file-name">vpl_run.sh</span>
+              </div>
+              <div class="file-item">
+                <i class="file-icon fas fa-file-code"></i>
+                <span class="file-name">vpl_evaluate.sh</span>
+              </div>
+              <div class="file-item">
+                <i class="file-icon fas fa-file-alt"></i>
+                <span class="file-name">vpl_test.cases</span>
+              </div>
+            </div>
+            
+            <h3>vpl_run.sh</h3>
+            <div class="code-block">#!/bin/bash
+# Compile C++ file
+g++ -o program *.cpp
+# Run program
+./program</div>
+            <div class="template-actions">
+              <button class="copy-btn" data-code="#!/bin/bash
+# Compile C++ file
+g++ -o program *.cpp
+# Run program
+./program">Copy Code</button>
+            </div>
+            
+            <h3>vpl_evaluate.sh</h3>
+            <div class="code-block">#!/bin/bash
+# Load common script and grade functions
+. vpl_environment.sh
+
+# Compile C++ file first
+g++ -o program *.cpp
+if [ $? -ne 0 ] ; then
+    echo "Compilation error"
+    exit 0
+fi
+
+# Run the program with test cases
+cat > vpl_execution << "END_SCRIPT"
+#!/bin/bash
+./program < vpl_test.cases
+END_SCRIPT
+
+# Make the execution script executable
+chmod +x vpl_execution
+
+# Run the test cases and capture output
+./vpl_execution > student_output.txt
+
+# Load the expected output
+cat > expected_output.txt << "END_OUTPUT"
+Sum: 30
+Sum: 70
+Sum: 0
+END_OUTPUT
+
+# Compare student output with expected output
+DIFF=$(diff -w student_output.txt expected_output.txt)
+
+# Grading logic
+VPL_GRADEMAX=100
+if [ -z "$DIFF" ]; then
+    # Perfect match
+    VPL_GRADE=100
+    COMMENT="Perfect! Your program produces the correct output."
+else
+    # Some differences
+    VPL_GRADE=0
+    COMMENT="Your program output doesn't match the expected output."
+    echo "<|--"
+    echo "$DIFF"
+    echo "--|>"
+fi
+
+# Display feedback
+echo "Grade: $VPL_GRADE/$VPL_GRADEMAX"
+echo -e "$COMMENT"</div>
+            <div class="template-actions">
+              <button class="copy-btn" data-code="#!/bin/bash
+# Load common script and grade functions
+. vpl_environment.sh
+
+# Compile C++ file first
+g++ -o program *.cpp
+if [ $? -ne 0 ] ; then
+    echo "Compilation error"
+    exit 0
+fi
+
+# Run the program with test cases
+cat > vpl_execution << "END_SCRIPT"
+#!/bin/bash
+./program < vpl_test.cases
+END_SCRIPT
+
+# Make the execution script executable
+chmod +x vpl_execution
+
+# Run the test cases and capture output
+./vpl_execution > student_output.txt
+
+# Load the expected output
+cat > expected_output.txt << "END_OUTPUT"
+Sum: 30
+Sum: 70
+Sum: 0
+END_OUTPUT
+
+# Compare student output with expected output
+DIFF=$(diff -w student_output.txt expected_output.txt)
+
+# Grading logic
+VPL_GRADEMAX=100
+if [ -z "$DIFF" ]; then
+    # Perfect match
+    VPL_GRADE=100
+    COMMENT="Perfect! Your program produces the correct output."
+else
+    # Some differences
+    VPL_GRADE=0
+    COMMENT="Your program output doesn't match the expected output."
+    echo "<|--"
+    echo "$DIFF"
+    echo "--|>"
+fi
+
+# Display feedback
+echo "Grade: $VPL_GRADE/$VPL_GRADEMAX"
+echo -e "$COMMENT"">Copy Code</button>
+            </div>
+            
+            <h3>vpl_test.cases</h3>
+            <div class="code-block">10 20
+30 40
+-5 5</div>
+            <div class="template-actions">
+              <button class="copy-btn" data-code="10 20
+30 40
+-5 5">Copy Code</button>
+            </div>
+            
+            <h3>Example Student Solution (for reference)</h3>
+            <div class="code-block">#include <iostream>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+int main() {
+    string line;
+    
+    while (getline(cin, line)) {
+        stringstream ss(line);
+        int a, b;
+        ss >> a >> b;
+        cout << "Sum: " << (a + b) << endl;
+    }
+    
+    return 0;
+}</div>
+            <div class="template-actions">
+              <button class="copy-btn" data-code="#include <iostream>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+int main() {
+    string line;
+    
+    while (getline(cin, line)) {
+        stringstream ss(line);
+        int a, b;
+        ss >> a >> b;
+        cout << "Sum: " << (a + b) << endl;
+    }
+    
+    return 0;
+}">Copy Code</button>
+            </div>
+          </div>
+          
+          <div class="template-details">
+            <h4>Assignment Description Example:</h4>
+            <p>Create a C++ program that reads pairs of integers from input and outputs their sum. The program should process each line of input separately and output the sum for each pair.</p>
+            
+            <h4>Customization Tips:</h4>
+            <ul>
+              <li>For C programs, change the compiler command from g++ to gcc</li>
+              <li>Add compiler flags for specific requirements (e.g., -Wall for warnings)</li>
+              <li>Check for memory leaks using Valgrind by adding it to the evaluation script</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>VPL Guide</h3>
+          <p>A comprehensive resource for CS educators implementing Virtual Programming Lab in their classrooms.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="what-is-vpl.html">What is VPL?</a></li>
+            <li><a href="implementation-guide.html">Implementation Guide</a></li>
+            <li><a href="readiness-quiz.html">Readiness Quiz</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="https://vpl.dis.ulpgc.es/" target="_blank">Official VPL Website</a></li>
+            <li><a href="https://docs.moodle.org/311/en/Virtual_Programming_Lab" target="_blank">Moodle VPL Documentation</a></li>
+            <li><a href="templates.html">Assignment Templates</a></li>
+            <li><a href="resources.html">Additional Resources</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 VPL Guide for CS Educators. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+          mobileMenu.classList.toggle('active');
+          this.classList.toggle('active');
+        });
+      }
+      
+      // Copy code buttons
+      const copyButtons = document.querySelectorAll('.copy-btn');
+      copyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const code = this.getAttribute('data-code');
+          navigator.clipboard.writeText(code).then(() => {
+            const originalText = this.textContent;
+            this.textContent = 'Copied!';
+            setTimeout(() => {
+              this.textContent = originalText;
+            }, 2000);
+          });
+        });
+      });
+      
+      // Language filter buttons
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const templateCards = document.querySelectorAll('.template-card');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          const filter = this.getAttribute('data-filter');
+          
+          // Show/hide templates based on filter
+          templateCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-language') === filter) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

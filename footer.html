@@ -1,0 +1,74 @@
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>VPL Guide</h3>
+          <p>A comprehensive resource for CS educators implementing Virtual Programming Lab in their classrooms.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="what-is-vpl.html">What is VPL?</a></li>
+            <li><a href="implementation-guide.html">Implementation Guide</a></li>
+            <li><a href="readiness-quiz.html">Readiness Quiz</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="https://vpl.dis.ulpgc.es/" target="_blank">Official VPL Website</a></li>
+            <li><a href="https://docs.moodle.org/311/en/Virtual_Programming_Lab" target="_blank">Moodle VPL Documentation</a></li>
+            <li><a href="templates.html">Assignment Templates</a></li>
+            <li><a href="resources.html">Additional Resources</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 VPL Guide for CS Educators. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+          mobileMenu.classList.toggle('active');
+          this.classList.toggle('active');
+        });
+      }
+      
+      // Highlight current page in navigation
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      
+      // For desktop navigation
+      const desktopNavLinks = document.querySelectorAll('.nav-link');
+      desktopNavLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+          link.classList.add('active');
+        }
+      });
+      
+      // For mobile navigation
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+      mobileNavLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

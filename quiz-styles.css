@@ -1,0 +1,233 @@
+/* Quiz Section Styles */
+.readiness-quiz-section {
+  background-color: var(--primary-50);
+  padding: 3rem 0;
+}
+
+.quiz-container {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quiz-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.quiz-intro h3 {
+  font-size: 1.5rem;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.quiz-intro p {
+  color: var(--gray-600);
+}
+
+.quiz-question {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.quiz-question:last-child {
+  border-bottom: none;
+}
+
+.question-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--gray-800);
+  margin-bottom: 1rem;
+}
+
+.question-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.question-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.question-option:hover {
+  background-color: var(--gray-100);
+}
+
+.question-option.selected {
+  background-color: var(--primary-50);
+  border-color: var(--primary-300);
+}
+
+.option-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.option-radio {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid var(--gray-400);
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.option-radio::after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--primary-600);
+}
+
+.question-option.selected .option-radio {
+  border-color: var(--primary-600);
+}
+
+.question-option.selected .option-radio::after {
+  display: block;
+}
+
+.option-text {
+  flex-grow: 1;
+}
+
+.quiz-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.quiz-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.quiz-button.prev {
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+}
+
+.quiz-button.prev:hover {
+  background-color: var(--gray-200);
+}
+
+.quiz-button.next,
+.quiz-button.submit {
+  background-color: var(--primary-600);
+  color: white;
+}
+
+.quiz-button.next:hover,
+.quiz-button.submit:hover {
+  background-color: var(--primary-700);
+}
+
+.quiz-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quiz-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 0.5rem;
+  background-color: var(--gray-200);
+  border-radius: 999px;
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--primary-500);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.quiz-result {
+  display: none;
+  text-align: center;
+}
+
+.quiz-result.show {
+  display: block;
+}
+
+.result-score {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-600);
+  margin-bottom: 1rem;
+}
+
+.result-message {
+  margin-bottom: 2rem;
+}
+
+.result-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--gray-900);
+}
+
+.result-description {
+  color: var(--gray-700);
+  margin-bottom: 1rem;
+}
+
+.result-recommendations {
+  text-align: left;
+  background-color: var(--gray-50);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.result-recommendations h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--gray-800);
+}
+
+.result-recommendations ul {
+  padding-left: 1.5rem;
+}
+
+.result-recommendations li {
+  margin-bottom: 0.5rem;
+}

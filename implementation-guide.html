@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VPL Implementation Guide - Virtual Programming Lab Guide</title>
+  <meta name="description" content="Step-by-step instructions for implementing Virtual Programming Lab (VPL) in your CS classroom.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="VPL Implementation Guide - Virtual Programming Lab Guide">
+  <meta property="og:description" content="Step-by-step instructions for implementing Virtual Programming Lab (VPL) in your CS classroom.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vpl-guide.example.com/implementation-guide.html">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">
+            <span class="logo-text">VPL Guide</span>
+          </a>
+        </div>
+        
+        <nav class="desktop-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link home-link">Home</a></li>
+            <li><a href="what-is-vpl.html" class="nav-link what-is-vpl-link">What is VPL?</a></li>
+            <li><a href="modern-classroom.html" class="nav-link modern-classroom-link">Modern Classroom</a></li>
+            <li><a href="implementation-guide.html" class="nav-link implementation-link active">Implementation</a></li>
+            <li><a href="templates.html" class="nav-link templates-link">Templates</a></li>
+            <li><a href="readiness-quiz.html" class="nav-link quiz-link">Readiness Quiz</a></li>
+            <li><a href="resources.html" class="nav-link resources-link">Resources</a></li>
+            <li><a href="faq.html" class="nav-link faq-link">FAQ</a></li>
+          </ul>
+        </nav>
+        
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span class="hamburger"></span>
+        </button>
+      </div>
+      
+      <div class="mobile-menu">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link home-link">Home</a></li>
+          <li><a href="what-is-vpl.html" class="mobile-nav-link what-is-vpl-link">What is VPL?</a></li>
+          <li><a href="modern-classroom.html" class="mobile-nav-link modern-classroom-link">Modern Classroom</a></li>
+          <li><a href="implementation-guide.html" class="mobile-nav-link implementation-link active">Implementation</a></li>
+          <li><a href="templates.html" class="mobile-nav-link templates-link">Templates</a></li>
+          <li><a href="readiness-quiz.html" class="mobile-nav-link quiz-link">Readiness Quiz</a></li>
+          <li><a href="resources.html" class="mobile-nav-link resources-link">Resources</a></li>
+          <li><a href="faq.html" class="mobile-nav-link faq-link">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Implementation Guide</h1>
+      <p>A step-by-step approach to setting up VPL in your classroom</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="content-section">
+    <div class="container">
+      <div class="content-grid">
+        <div class="content-main">
+          <h2>VPL Implementation Overview</h2>
+          <p>Implementing VPL consists of several key steps. This guide will walk you through each one, from installing the Moodle plugin to configuring the jail server and creating your first programming assignment.</p>
+          
+          <div class="implementation-steps">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Install VPL Plugin in Moodle</h3>
+                <p>The first step is to install the VPL plugin in your Moodle installation.</p>
+                <ol>
+                  <li>Log in to your Moodle site as an administrator</li>
+                  <li>Go to Site administration > Plugins > Install plugins</li>
+                  <li>Download the VPL plugin from <a href="https://moodle.org/plugins/mod_vpl" target="_blank">Moodle plugins directory</a></li>
+                  <li>Upload the ZIP file in the plugin installer</li>
+                  <li>Follow the on-screen instructions to complete the installation</li>
+                  <li>Once installed, go to Site administration > Plugins > Activity modules > Virtual Programming Lab to configure the settings</li>
+                </ol>
+              </div>
+            </div>
+            
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>Set Up a Jail Server (Optional but Recommended)</h3>
+                <p>The jail server securely executes student code. While not strictly required for basic VPL functionality, it's strongly recommended for security and to enable advanced features.</p>
+                <h4>Basic Jail Server Setup:</h4>
+                <ol>
+                  <li>Choose a Linux server (physical or virtual) with at least 2GB RAM and 20GB storage</li>
+                  <li>Install required packages:
+                    <pre><code>sudo apt-get update
+sudo apt-get install apache2 php php-zip php-mbstring php-xml wget unzip</code></pre>
+                  </li>
+                  <li>Download and install the jail server:
+                    <pre><code>wget https://github.com/jcrodriguez-dis/vpl-jail-system/archive/refs/heads/master.zip
+unzip master.zip
+cd vpl-jail-system-master
+sudo ./install-vpl-jail-system.sh</code></pre>
+                  </li>
+                  <li>Configure the jail server by editing its configuration file:
+                    <pre><code>sudo nano /etc/vpl/vpl-jail-system.conf</code></pre>
+                  </li>
+                  <li>Start the jail server:
+                    <pre><code>sudo systemctl start vpl-jail-system</code></pre>
+                  </li>
+                </ol>
+                <h4>Advanced Configuration (SSL/TLS):</h4>
+                <p>For production environments, you should secure your jail server with SSL/TLS:</p>
+                <ol>
+                  <li>Generate self-signed certificates or obtain certificates from a trusted CA</li>
+                  <li>Configure the jail server to use SSL by editing the configuration file</li>
+                  <li>Update the Moodle VPL settings to connect to the jail server using HTTPS</li>
+                </ol>
+                <p>Detailed instructions for SSL/TLS setup can be found in the <a href="https://github.com/jcrodriguez-dis/vpl-jail-system#readme" target="_blank">official jail server documentation</a>.</p>
+              </div>
+            </div>
+            
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Configure VPL in Moodle</h3>
+                <p>After installation, you need to configure VPL to work with your jail server (if you set one up).</p>
+                <ol>
+                  <li>Go to Site administration > Plugins > Activity modules > Virtual Programming Lab</li>
+                  <li>Set the jail servers URL(s) in the format:
+                    <pre><code>http://your-jail-server:8080</code></pre>
+                    Or if using SSL:
+                    <pre><code>https://your-jail-server:443</code></pre>
+                  </li>
+                  <li>If you have multiple jail servers, list them separated by commas</li>
+                  <li>Configure other settings according to your preferences</li>
+                  <li>Save changes</li>
+                </ol>
+              </div>
+            </div>
+            
+            <div class="step-card">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3>Create Your First VPL Assignment</h3>
+                <p>Now you can create your first programming assignment using VPL.</p>
+                <ol>
+                  <li>Go to your course</li>
+                  <li>Turn editing on</li>
+                  <li>Click "Add an activity or resource" and select "Virtual Programming Lab"</li>
+                  <li>Fill in the basic settings (name, description, grade options, etc.)</li>
+                  <li>Configure execution options:
+                    <ul>
+                      <li>Run: Enable to allow students to run their code</li>
+                      <li>Debug: Enable to allow debugging</li>
+                      <li>Evaluate: Enable for automatic evaluation</li>
+                      <li>Automatic evaluation: Set the behavior of automatic evaluation</li>
+                    </ul>
+                  </li>
+                  <li>Set submission restrictions if needed (file types, size, etc.)</li>
+                  <li>Click "Save and display"</li>
+                </ol>
+              </div>
+            </div>
+            
+            <div class="step-card">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h3>Set Up Evaluation Scripts</h3>
+                <p>To enable automatic evaluation, you need to create evaluation scripts.</p>
+                <ol>
+                  <li>In your VPL assignment, go to "Execution files"</li>
+                  <li>Create the following files:
+                    <ul>
+                      <li><strong>vpl_run.sh</strong>: Script to run the program</li>
+                      <li><strong>vpl_evaluate.sh</strong>: Script for evaluation</li>
+                      <li><strong>vpl_test.cases</strong>: Test cases for assessment</li>
+                    </ul>
+                  </li>
+                  <li>Example vpl_run.sh for Python:
+                    <pre><code>#!/bin/bash
+python3 $VPL_SRCFILE</code></pre>
+                  </li>
+                  <li>Example vpl_evaluate.sh for basic testing:
+                    <pre><code>#!/bin/bash
+# Load common script and grade functions
+. vpl_environment.sh
+#
+
+# Compile the student's submission if needed
+# (not necessary for Python)
+
+# Run the program with test cases
+cat > vpl_execution << "END_SCRIPT"
+#!/bin/bash
+python3 $VPL_SRCFILE < vpl_test.cases
+END_SCRIPT
+
+# Run the test cases
+chmod +x vpl_execution
+./vpl_execution > vpl_execution.out
+
+# Check output against expected output
+# Your evaluation logic here
+
+# Example grade assignment
+VPL_GRADEMAX=100
+VPL_GRADE=100
+
+# Display feedback
+echo "Your program has been evaluated."
+echo "Grade: $VPL_GRADE/$VPL_GRADEMAX"</code></pre>
+                  </li>
+                  <li>Example vpl_test.cases:
+                    <pre><code>10 20
+30 40
+-5 5</code></pre>
+                  </li>
+                  <li>Save the files</li>
+                </ol>
+                <p>These are basic examples. For more advanced evaluation scripts, check out our <a href="templates.html">VPL Templates</a> section.</p>
+              </div>
+            </div>
+            
+            <div class="step-card">
+              <div class="step-number">6</div>
+              <div class="step-content">
+                <h3>Test Your VPL Assignment</h3>
+                <p>Before making the assignment available to students, test it thoroughly.</p>
+                <ol>
+                  <li>Create a test submission</li>
+                  <li>Try running, debugging, and evaluating the submission</li>
+                  <li>Verify that the evaluation script works as expected</li>
+                  <li>Check that the grading criteria are applied correctly</li>
+                  <li>Make any necessary adjustments to the scripts</li>
+                </ol>
+              </div>
+            </div>
+            
+            <div class="step-card">
+              <div class="step-number">7</div>
+              <div class="step-content">
+                <h3>Introduce VPL to Your Students</h3>
+                <p>Finally, introduce VPL to your students with clear instructions.</p>
+                <ol>
+                  <li>Create a tutorial or demonstration for students</li>
+                  <li>Explain how to submit assignments, run code, and interpret feedback</li>
+                  <li>Start with simpler assignments to allow students to get familiar with the system</li>
+                  <li>Provide support channels for technical questions</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          
+          <div class="next-steps">
+            <h2>Next Steps</h2>
+            <p>After implementing the basic VPL setup, explore these resources to enhance your experience:</p>
+            <div class="button-group">
+              <a href="templates.html" class="btn btn-secondary">VPL Assignment Templates</a>
+              <a href="resources.html" class="btn btn-secondary">Additional Resources</a>
+              <a href="faq.html" class="btn btn-primary">Frequently Asked Questions</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>VPL Guide</h3>
+          <p>A comprehensive resource for CS educators implementing Virtual Programming Lab in their classrooms.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="what-is-vpl.html">What is VPL?</a></li>
+            <li><a href="implementation-guide.html">Implementation Guide</a></li>
+            <li><a href="readiness-quiz.html">Readiness Quiz</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="https://vpl.dis.ulpgc.es/" target="_blank">Official VPL Website</a></li>
+            <li><a href="https://docs.moodle.org/311/en/Virtual_Programming_Lab" target="_blank">Moodle VPL Documentation</a></li>
+            <li><a href="templates.html">Assignment Templates</a></li>
+            <li><a href="resources.html">Additional Resources</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2023 VPL Guide for CS Educators. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+          mobileMenu.classList.toggle('active');
+          this.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
